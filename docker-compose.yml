@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  eureka-server:
+    image: eureka-server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: eureka-server
+    ports:
+      - "8761:8761"
+    networks:
+      - microservices-network
+
+networks:
+  microservices-network:
+    driver: bridge
