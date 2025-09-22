@@ -10,8 +10,8 @@ services:
     ports:
       - "8761:8761"
     networks:
-      - microservices-network
+      - infra-net   # misma red que usan tus microservicios
 
 networks:
-  microservices-network:
-    driver: bridge
+  infra-net:
+    external: true
